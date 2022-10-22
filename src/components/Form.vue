@@ -1,12 +1,12 @@
-<script setup>
-import { ref, computed } from 'vue'
+<script lang="ts" setup>
+import { ref } from 'vue'
 
 const arrayTask = ref([]);
 
 
 const createTask = ()=>{
     // console.log(task.value);
-    arrayTask.value.push(task.value)
+    arrayTask.value.push(task.value);
 
 }
 
@@ -27,14 +27,25 @@ const createTask = ()=>{
      </div>
      <button type="button" @click='createTask()'>Create</button>
   </form>
-
-
-  <ul>
-    <li v-for ="(ta, index) in arrayTask" key="index">
-      {{ta}}
-      </li>
-    </ul>
+  <div class="container text-center">
+  <div class="row">
+    <div class="col">
+        <div class="card text-center" style="width: 18rem; margin-bottom: 1%;" v-for ="(ta, index) in arrayTask" key="index">
+                 <div class="card-body" >
+                 <h5 class="card-title">{{index}}</h5>
+                  <p class="card-text">  {{ta}} </p>
+    
+                  </div>
   
+  
+        </div>
+        
+  
+  </div>
+</div>
+   
+    </div>
+    
 
 
 
